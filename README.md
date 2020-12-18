@@ -1,5 +1,7 @@
 # [Solution for this Challenge](https://dmoj.ca/problem/ccc05j4)
 
+View page [here](https://destroyer22719.github.io/Spiraling-Circle-Challenge/)
+
 This is a solution I made to solve the Canadian Computing Competition. Honestly speaking this is a really difficult and challenging quesiton even for me. I made this to share others my solution.
 
 ## How it works
