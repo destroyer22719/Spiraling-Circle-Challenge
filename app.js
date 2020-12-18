@@ -69,20 +69,22 @@ $('#start').click(navigateBridgit);
 //function to generate grid (house) for bridget to navigate in
 function generateGrid() {
 
+  //retrieving user dimension input
   width = +$('#width').val();
   height = +$('#height').val();
   coverHeight = +$('#coverHeight').val();
   coverWidth = +$('#coverWidth').val();
 
+  //setting width and height of the grid
   $('.grid').empty();
   $('.grid').width(width*50);
   $('.grid').height(width*50);
 
+  //validates user input
   if ((height - coverHeight*2) < 1 || (width - coverWidth*2) < 1) {
     $('#error')
       .show()
       .text('invalid corner dimensions');
-
     return;
   } 
 
@@ -90,13 +92,16 @@ function generateGrid() {
     .hide()
     .text('');
 
+  //generates rows
   for (let i = 0; $('.grid').children().length < height; i++) {
     $('.grid').append(`<div class="grid-row"></div>`);
+    //generates columns
     for (let j = 0; $(`.grid-row:nth-child(${i+1})`).children().length < width; j++) {
       $(`.grid-row:nth-child(${i+1})`).append(`<div class="tile"></div>`);
     }
   }
   
+  //generates corners
   for(let i = 0; $('.grid-row .cover').length < (coverHeight*coverWidth)*4; i++) { 
     $(`.grid-row:nth-child(${i+1})`).children().each(function (j) {
       if (j+1 <= coverWidth) {
@@ -114,6 +119,7 @@ function generateGrid() {
     });
   }
 
+  //sets the starting position of Bridget
   $('.grid-row:nth-child(1) > .tile').each((i, e) => {
     if(validCoordinates({
       newX: 1+i,
@@ -133,7 +139,7 @@ function generateGrid() {
   
 } 
 
-//callback to move navigate bridgit
+//callback to navigate bridgit
 function navigateBridgit () {
   let priority='RDLU';
   let steps = 0;
@@ -152,6 +158,9 @@ function navigateBridgit () {
           continue;
         } else if (validCoordinates({...left()})) {
           if (!validCoordinates({...left(2)})) {
+            //checks if the next left tile is valid, but the one after is invalid
+            //this should only work when at the corner of tile 3
+            //if it is, change the direction priority
             moveBridget({...left()});
             priority='LDUR';
             steps++;
@@ -181,6 +190,9 @@ function navigateBridgit () {
           continue;
         } else if (validCoordinates({...up()})) {
           if (!validCoordinates({...up(2)})){
+            //checks if the next up tile is valid, but the one after is invalid
+            //this should only work when at the top corner of tile 4
+            //if it is, change the direction priority
             moveBridget({...up()});
             steps++;
             priority='URDL';
@@ -206,6 +218,9 @@ function navigateBridgit () {
           continue;
         } else if (validCoordinates({...right()})) {
           if(!validCoordinates({...right(2)})) {
+            //checks if the next right tile is valid, but the one after is invalid
+            //this should only work when at the right-most corner of tile 1
+            //if it is, change the direction priority
             moveBridget({...right()});
             priority='RDLU';
             steps++;
