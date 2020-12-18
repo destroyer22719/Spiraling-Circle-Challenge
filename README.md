@@ -48,3 +48,7 @@ At first the priority is Right, Down, Up, Left. Which means it goes left, if it'
 At different parts of the grid the priorities changed. At the 3rd tile the priority changed from Right, Down, Up, Left (RDUL), to Left, Down, Up, Right (LDUR), and when it's approaching the 4th tile it changes it's priority again from Left, Down, Up, Right (LDUR) all the way to Up, Right, Down, Left (UPRDL), when it's at the first time again it goes back to Right, Down, Up, Left. 
 
 These direction order priorities ensure that Bridget navigates on the edge clockwise. 
+
+Unfortunately I did not implement a slowmotion to see bridget moving because `while` loops and `setTimeout` don't go well together
+
+You can view the code in futher detail in `app.js`

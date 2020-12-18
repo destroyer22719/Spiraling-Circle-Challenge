@@ -27,6 +27,19 @@ input {
   background-color: aliceblue;
 }
 
+footer {
+  margin-top: 25px;
+  width: 100%;
+  height: 200px;
+  background-color: rgb(31,133,222);
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  color: aliceblue;
+}
+
 input:focus {
   border: 2px solid rgb(150, 0, 255);
   outline: none;
