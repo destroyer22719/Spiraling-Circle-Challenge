@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;900&display=swap" rel="stylesheet"></head>
+<body>
+  <h1>Navigate Bridget</h1>
+  <section class="options">
+    <div class="gridDimensions">
+      <input type="number" placeholder="width for the container" id="width">
+      <input type="number" placeholder="height for the container" id="height">
+    </div>
+    <div class="otherInputs">
+      <input type="number" placeholder="width of the corner" id="coverWidth">
+      <input type="number" placeholder="height of the corner"id="coverHeight">
+      <input type="number" placeholder="number of steps bridget takes"id="maxSteps">
+    </div>
+    <div class="buttons">
+      <button id="create">Enter Amount</button>
+      <button id="start">Move Bridgit</button><br>
+    </div>
+  </section>
+  <div class="displayMessages">
+    <span id="error"></span>
+    <div class="destinationDisplay">Bridget is at: <span></span></div>
+  </div>
+
+  <div class="grid">
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

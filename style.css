@@ -1,0 +1,141 @@
+* {
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: aliceblue;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  padding: 40px;
+  background-color: rgb(255, 75, 75);
+  font-size: 40px;
+  font-weight: 900;
+  color: aliceblue;
+}
+
+input {
+  margin: 5px 0;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  background-color: aliceblue;
+}
+
+input:focus {
+  border: 2px solid rgb(150, 0, 255);
+  outline: none;
+}
+
+
+.gridDimensions {
+  width: 80%;
+  display: flex;
+  margin-top: 50px;
+}
+.gridDimensions * {
+  flex-grow: 1;
+}
+
+.otherInputs {
+  width: 80%;
+  display: flex;
+}
+.otherInputs * {
+  flex-grow: 1;
+}
+
+.buttons * {
+  width: 25%;
+  height: 50px;
+  margin: 30px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: rgb(31,133,222);
+  background-color: rgb(255, 75, 75);
+  outline: none;
+  border: none;
+}
+
+button:active {
+  background-color: aliceblue;
+}
+
+
+
+.grid {
+  background-color: white;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 250px;
+}
+
+.grid-row { 
+  flex-grow: 1;
+  flex-direction: row;
+  display: flex;
+  margin: 0;
+  border: 2px solid red;
+}
+
+.tile {
+  flex-grow: 1;
+  /* width: 50px; */
+  border: 2px solid black;
+  background-color: red;
+  margin: 0;
+}
+
+.cover  {
+  background-color: black !important;
+}
+
+.bridget {
+  background-color: blue !important;
+}
+
+#error {
+  display: block;
+  margin-top: 2px;
+  height: 60px;
+
+  border-left: 20px solid  rgb(255, 50, 50);
+  background-color: rgb(255, 150, 150);
+
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 55px;
+}
+
+.destinationDisplay {
+  display: block;
+  position: relative;
+  height: 60px;
+  margin-bottom: 5px;
+  
+  background-color: rgba(150, 255, 150);
+  border-left: 20px solid rgba(50, 255, 50);
+
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 55px;
+}
+
+.displayMessages {
+  margin: 10px 0; 
+}
+
+.options {
+  background-color: rgb(31,133,222);
+  padding: 40px;
+}
