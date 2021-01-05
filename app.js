@@ -162,7 +162,7 @@ function navigateBridgit () {
             //this should only work when at the corner of tile 3
             //if it is, change the direction priority
             moveBridget({...left()});
-            priority='LDUR';
+            priority='LURD';
             steps++;
             continue;
           } else {
@@ -179,64 +179,32 @@ function navigateBridgit () {
           steps=maxSteps;
           break;
         }
-      case 'LDUR': 
+      case 'LURD': 
         if(validCoordinates({...left()})) {
           moveBridget({...left()});
           steps++;
           continue;
-        } else if (validCoordinates({...down()})) {
-          moveBridget({...down()});
-          steps++;
-          continue;
         } else if (validCoordinates({...up()})) {
-          if (!validCoordinates({...up(2)})){
-            //checks if the next up tile is valid, but the one after is invalid
-            //this should only work when at the top corner of tile 4
-            //if it is, change the direction priority
-            moveBridget({...up()});
-            steps++;
-            priority='URDL';
-            continue;
-          } else {
-            moveBridget({...up()});
-            steps++;
-            continue;
-          }    
-        } else if (validCoordinates({...right()})) {
-          steps++;
-          moveBridget({...right()}); 
-          continue;
-        } else {
-          $('span').text(`${coordinates.x}, ${coordinates.y}`);
-          steps=maxSteps;
-          break;
-        }
-      case 'URDL': 
-        if(validCoordinates({...up()})) {
+          //checks if the next up tile is valid, but the one after is invalid
+          //this should only work when at the top corner of tile 4
+          //if it is, change the direction priority
           moveBridget({...up()});
           steps++;
           continue;
         } else if (validCoordinates({...right()})) {
-          if(!validCoordinates({...right(2)})) {
-            //checks if the next right tile is valid, but the one after is invalid
-            //this should only work when at the right-most corner of tile 1
-            //if it is, change the direction priority
+          if (!validCoordinates({...right(2)})) {
             moveBridget({...right()});
-            priority='RDLU';
+            priority='RDLU'
             steps++;
             continue;
           } else {
-            moveBridget({...right()});
-            steps++
+            steps++;
+            moveBridget({...right()}); 
             continue;
           }
         } else if (validCoordinates({...down()})) {
           moveBridget({...down()});
           steps++;
-          continue;
-        } else if (validCoordinates({...left()})) {
-          moveBridget({...left()});
-          steps++
           continue;
         } else {
           $('span').text(`${coordinates.x}, ${coordinates.y}`);
