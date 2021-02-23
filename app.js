@@ -7,7 +7,6 @@ let coordinates = {
   y: 1,
 };
 
-
 $('#error')
 .hide()
 .text('');
